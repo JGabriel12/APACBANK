@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>APACBANK</title>
+    <link rel="stylesheet" href="../css/mainScreen.css" />
+  </head>
+  <body class="main-bg">
+    <section class="sec-form">
+      <header>
+        <h1 class="titulo">Cadastro da conta</h1>
+      </header>
+      <form
+        action="../php/criar_conta.php"
+        id="formulario"
+        name="formulario"
+        class="form"
+        method="POST"
+      >
+        <div class="conta">
+          <select name="conta" id="conta">
+            <option selected>Informe o tipo da conta</option>
+            <option value="conta_corrente">Conta corrente</option>
+            <option value="conta_poupanca">Conta Poupança</option>
+            <option value="conta_juridica">Conta Jurídica</option>
+          </select>
+        </div>
+        <div class="saldo">
+          <label for="saldo_conta">Saldo</label>
+          <input
+            class="inputContent"
+            type="number"
+            placeholder="Saldo de entrada"
+            name="saldo_conta"
+            id="saldo_conta"
+          />
+        </div>
+        <div class="data_conta">
+          <label for="data_de_criacao">Data atual</label>
+          <input
+            class="inputContent"
+            type="number"
+            placeholder="Ano/Mês/Dia"
+            name="data_de_criacaoo"
+            id="data_de_criacao"
+          />
+        </div>
+        <div class="submit">
+          <input class="submitContent" type="submit" value="Cadastrar" />
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
