@@ -1,9 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <title>APACBANK</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/mainScreen.css" />
   </head>
-  <body></body>
+  <body class="main-bg">
+    <section class="sec-form">
+      <header>
+        <h1 class="titulo">Cadastro do usuário</h1>
+      </header>
+      <form
+        action="mainScreen.php"
+        id="formulario"
+        name="formulario"
+        class="form"
+        method="POST"
+      >
+        <div class="nome">
+          <label for="nome_usuario">Nome</label>
+          <input
+            class="inputContent"
+            type="text"
+            placeholder="Informe seu nome"
+            name="nome_usuario"
+            id="nome_usuario"
+          />
+        </div>
+        <div class="cpf">
+          <label for="cpf_usuario">CPF</label>
+          <input
+            class="inputContent"
+            type="number"
+            placeholder="Informe seu CPF"
+            name="cpf_usuario"
+            id="cpf_usuario"
+            maxlength="11"
+          />
+        </div>
+        <div class="senha">
+          <label for="senha_usuario">Senha <br /></label>
+          <input
+            placeholder="Digite sua senha"
+            class="inputContent"
+            type="password"
+            name="senha_usuario"
+            id="senha_usuario"
+            maxlength="30"
+          />
+        </div>
+
+        <div class="saldo">
+          <label for="saldo_usuario">Saldo</label>
+          <input
+            class="inputContent"
+            type="text"
+            placeholder="Saldo inicial em R$"
+            name="saldo_usuario"
+            id="saldo_usuario"
+          />
+        </div>
+      </form>
+    </section>
+  </body>
 </html>
