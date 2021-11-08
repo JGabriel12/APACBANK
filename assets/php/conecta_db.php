@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "apacbank_database";
+$database = "apacbank";
 
 $conexao = mysqli_connect($host, $user, $password, $database);
 mysqli_set_charset($conexao, 'utf8');
