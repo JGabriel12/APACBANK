@@ -1,7 +1,7 @@
 <?php
 
 include 'conecta_db.php';
-
+$id_usuario = $_POST["id_usuario"];
 $data_de_criacao = $_POST["data_de_criacao"];
 $tipo_conta = $_POST["tipo_conta"];
 $saldo_conta = 0;
@@ -14,20 +14,20 @@ if ($data_de_criacao == null) {
 
   switch ($tipo_conta) {
     case 1:
-      $tipo_conta = "conta_corrente";
+      $tipo_conta = "Conta corrente";
       $saldo_conta = 100;
       break;
     case 2:
-      $tipo_conta = "conta_poupanca";
+      $tipo_conta = "Conta poupança";
       $saldo_conta = 500;
       break;
     case 3:
-      $tipo_conta = "conta_juridica";
+      $tipo_conta = "Conta jurídica";
       $saldo_conta = 1000;
       break;
   }
 
-  $query = "INSERT INTO conta (data_de_criacao, tipo_conta, saldo_conta) VALUES ('$data_de_criacao', '$tipo_conta','$saldo_conta')";
+  $query = "INSERT INTO conta (data_de_criacao, tipo_conta, saldo_conta, id_usuario) VALUES ('$data_de_criacao', '$tipo_conta','$saldo_conta','$id_usuario')";
 
   if ($conexao->query($query) === true) {
     echo "<script>

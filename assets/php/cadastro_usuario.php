@@ -1,7 +1,7 @@
 <?php
 
 include 'conecta_db.php';
-
+$id_usuario = $_POST["id_usuario"];
 $nome_usuario = $_POST["nome_usuario"];
 $cpf_usuario = $_POST["cpf_usuario"];
 $senha_usuario = $_POST["senha_usuario"];
@@ -24,7 +24,7 @@ if ($nome_usuario == null) {
   if ($conexao->query($query) === true) {
     echo "<script>
   alert('Usuario cadastrado com sucesso!');
-  window.location.href='../screens/tela_inicial.php';
+  window.location.href='../screens/conta.php';
   </script>";
   } else {
     echo "Erro " . $query . "<br>" . $conexao->error;
