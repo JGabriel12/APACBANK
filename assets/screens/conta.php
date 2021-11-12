@@ -20,13 +20,13 @@
         <input class="inputContent" type="date" placeholder="Ano/Mês/Dia" name="data_de_criacao" id="data_de_criacao" />
       </div>
       <div class="tipo_conta">
-        <?php while ($dado = $conexao1->fetch_array()) { ?>
+        <?php while ($dado = $conexao2->fetch_array()) { ?>
           <td><input type="hidden" name="id_usuario" value="<?php echo $dado["id_usuario"] ?>"></td>
-        <?php } ?>
+        <?php }
+        ?>
         <select name="tipo_conta" id="tipo_conta">
           <option value="0" selected>Informe o tipo da conta</option>
           <option value="1">Conta corrente</option>
-
           <option value="2">Conta Poupança</option>
           <option value="3">Conta Jurídica</option>
         </select>

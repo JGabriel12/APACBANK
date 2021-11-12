@@ -7,7 +7,6 @@ $cpf_usuario = $_POST["cpf_usuario"];
 $senha_usuario = $_POST["senha_usuario"];
 $confirmaSenha_usuario = $_POST["confirmaSenha_usuario"];
 
-
 if ($nome_usuario == null) {
   echo "Nome invalido!";
 } else if ($cpf_usuario == null) {
@@ -24,13 +23,11 @@ if ($nome_usuario == null) {
   if ($conexao->query($query) === true) {
     echo "<script>
   alert('Usuario cadastrado com sucesso!');
-  window.location.href='../screens/conta.php';
+  window.location.href='../screens/listagem_usuarios.php';
   </script>";
   } else {
     echo "Erro " . $query . "<br>" . $conexao->error;
   }
 }
-
-
 
 $conexao->close();

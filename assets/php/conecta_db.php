@@ -13,7 +13,10 @@ $mysqli = new mysqli($host, $user, $password, $database);
 if ($mysqli->connect_errno)
   echo "Falha na conecção";
 
-// Selec dos usuarios cadastrados
-$consulta = "SELECT * FROM cadastro_usuario as u INNER JOIN conta as c on (u.id_usuario = c.id_usuario) WHERE status_usuario = 1";
+// Select dos usuarios cadastrados
 
-$conexao1 = $mysqli->query($consulta) or die($mysqli->error);
+$consulta_usuarios    = "SELECT * FROM cadastro_usuario "; // WHERE status_usuario = 1
+$consulta_usuarios_bd = $mysqli->query($consulta_usuarios) or die($mysqli->error);
+
+
+//Select usuarios com contas
