@@ -1,5 +1,7 @@
 <?php include '../php/conecta_db.php';
-
+$id_usuario = $_GET["id_usuario"];
+$consulta_usuarios_conta = "SELECT * FROM cadastro_usuario as u INNER JOIN conta as c ON (u.id_usuario = c.id_usuario) WHERE $id_usuario = u.id_usuario ";
+$consulta_usuarios_conta_bd = $mysqli->query($consulta_usuarios_conta) or die($mysqli->error);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -25,7 +27,7 @@
       <td>EDITAR / EXCLUIR</td>
     </tr>
 
-    <?php while ($dado = $conexao1->fetch_array()) { ?>
+    <?php while ($dado = $consulta_usuarios_conta_bd->fetch_array()) { ?>
       <form action="editar.php" method="POST">
         <tr>
           <td><input type="hidden" name="id_usuario" value="<?php echo $dado["id_usuario"] ?>"><?php echo $dado["id_usuario"] ?></td>

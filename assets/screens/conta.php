@@ -1,4 +1,5 @@
 <?php include '../php/conecta_db.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -20,7 +21,7 @@
         <input class="inputContent" type="date" placeholder="Ano/Mês/Dia" name="data_de_criacao" id="data_de_criacao" />
       </div>
       <div class="tipo_conta">
-        <?php while ($dado = $conexao2->fetch_array()) { ?>
+        <?php while ($dado = $consulta_usuarios_bd->fetch_array()) { ?>
           <td><input type="hidden" name="id_usuario" value="<?php echo $dado["id_usuario"] ?>"></td>
         <?php }
         ?>
