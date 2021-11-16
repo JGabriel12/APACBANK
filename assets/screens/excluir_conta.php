@@ -23,8 +23,8 @@ $row_conta = mysqli_fetch_assoc($resultado_conta);
       <input type="hidden" name="id_usuario" id="id_usuario" value="<?php echo $row_conta['id_usuario']; ?>" />
 
       <div class="data">
-        <label for="cpf_usuario">Data de criação da conta:</label>
-        <input class="inputContent" type="number" name="data_de_criacao" id="cpf_usuario" maxlength="11" value="<?php echo $row_conta['data_de_criacao']; ?>" />
+        <label for="data_de_criacao">Data de criação da conta:</label>
+        <input class="inputContent" type="number" name="data_de_criacao" id="data_de_criacao" maxlength="11" value="<?php echo $row_conta['data_de_criacao']; ?>" />
       </div>
 
       <div class="submit">

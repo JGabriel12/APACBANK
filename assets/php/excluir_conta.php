@@ -10,12 +10,12 @@ alert('Para desativar sua conta, seu saldo precisa ser = 0');
 window.location.href='../screens/listagem_usuarios.php';  
 </script>";
 } else {
-  $result_usuario = "UPDATE conta SET status_contao = 0 WHERE id_usuario = '$id_usuario'";
+  $result_usuario = "UPDATE conta SET status_conta = 0 WHERE id_usuario = '$id_usuario'";
 }
 
 if ($conexao->query($result_usuario) === true) {
   echo "<script>
-alert('Usuario deletado com sucesso!');
+alert('Conta deletada com sucesso!');
 window.location.href='../screens/listagem_usuarios.php';  
 </script>";
 } else {
