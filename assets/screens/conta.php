@@ -16,15 +16,16 @@
     </header>
 
     <form action="../php/criar_conta.php" id="formulario" name="formulario" class="form" method="POST">
+
+      <input type="hidden" name="id_usuario" value="<?php echo $id_usuario = $_GET["id_usuario"];
+
+                                                    ?>">
+
       <div class="data_conta">
         <label for="data_de_criacao">Data atual</label>
         <input class="inputContent" type="date" placeholder="Ano/Mês/Dia" name="data_de_criacao" id="data_de_criacao" />
       </div>
       <div class="tipo_conta">
-        <?php while ($dado = $consulta_usuarios_bd->fetch_array()) { ?>
-          <td><input type="hidden" name="id_usuario" value="<?php echo $dado["id_usuario"] ?>"></td>
-        <?php }
-        ?>
         <select name="tipo_conta" id="tipo_conta">
           <option value="0" selected>Informe o tipo da conta</option>
           <option value="1">Conta corrente</option>

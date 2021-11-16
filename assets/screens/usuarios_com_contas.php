@@ -23,8 +23,6 @@ $consulta_usuarios_conta_bd = $mysqli->query($consulta_usuarios_conta) or die($m
       <td>CPF</td>
       <td>Contas</td>
       <td>Data de criação</td>
-      <td>Criar conta</td>
-      <td>EDITAR / EXCLUIR</td>
     </tr>
 
     <?php while ($dado = $consulta_usuarios_conta_bd->fetch_array()) { ?>
@@ -35,13 +33,6 @@ $consulta_usuarios_conta_bd = $mysqli->query($consulta_usuarios_conta) or die($m
           <td><?php echo $dado["cpf_usuario"] ?></td>
           <td><?php echo $dado["tipo_conta"] ?></td>
           <td><?php echo $dado["data_de_criacao"] ?></td>
-          <td>
-            <a href="conta.php">Criar conta</a>
-          </td>
-          <td>
-            <a href="editar_conta.php">Editar conta</a>
-            <a href="excluir_conta.php">Excluir conta</a>
-          </td>
           <td><a href="listagem_usuarios.php">Voltar</a></td>
       </form>
     <?php } ?>
