@@ -20,6 +20,7 @@
       <td>ID</td>
       <td>NOME</td>
       <td>CPF</td>
+      <td>SALDO</td>
       <td>CONTAS CRIADAS</td>
       <td>CRIAR CONTA</td>
       <td>DEPÓSITO</td>
@@ -36,13 +37,16 @@
           <td><?php echo strtoupper($dado["nome_usuario"]) ?></td>
           <td><?php echo $dado["cpf_usuario"] ?></td>
           <td>
+            <a href="saldo.php?id_usuario=<?php echo $dado["id_usuario"] ?>">R$</a>
+          </td>
+          <td>
             <a href="usuarios_com_contas.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Contas</a>
           </td>
           <td>
             <a href="conta.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Criar conta</a>
           </td>
           <td>
-            <a href="#">Depósitar</a>
+            <a href="deposito.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Depósitar</a>
           </td>
           <td>
             <a href="#">Sacar</a>

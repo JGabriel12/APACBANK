@@ -18,8 +18,3 @@ if ($mysqli->connect_errno)
 
 $consulta_usuarios    = "SELECT * FROM cadastro_usuario WHERE status_usuario = 1 ";
 $consulta_usuarios_bd = $mysqli->query($consulta_usuarios) or die($mysqli->error);
-
-
-//Select usuarios com contas
-
-
