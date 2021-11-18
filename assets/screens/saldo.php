@@ -1,10 +1,11 @@
 <?php include '../php/conecta_db.php';
 $id_usuario = filter_input(INPUT_GET, 'id_usuario', FILTER_SANITIZE_NUMBER_INT);
+$tipo_conta = filter_input(INPUT_GET, 'tipo_conta', FILTER_SANITIZE_STRING);
 $result_usuario = "SELECT * FROM cadastro_usuario as u INNER JOIN conta as c ON (u.id_usuario = c.id_usuario) WHERE $id_usuario = u.id_usuario";
 $resultado_usuario = mysqli_query($conexao, $result_usuario);
 $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 
-
+// SELECT saldo_conta FROM `conta` WHERE tipo_conta = "Conta corrente" AND id_usuario = 1;
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
   </span>
 
   <br>
-  <span>Seu saldo é: <?php echo $row_usuario['saldo_conta']; ?> R$</span>
+  <span>Seu saldo é: <?php echo $row_usuario["saldo_conta"]; ?> R$</span>
 
 </body>
 
