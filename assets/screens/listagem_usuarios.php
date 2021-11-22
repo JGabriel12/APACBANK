@@ -20,12 +20,8 @@
       <td>ID</td>
       <td>NOME</td>
       <td>CPF</td>
-      <td>SALDO</td>
       <td>CONTAS CRIADAS</td>
       <td>CRIAR CONTA</td>
-      <td>DEPÓSITO</td>
-      <td>SAQUE</td>
-      <td>TRANSFERÊNCIA</td>
       <td>USUÁRIO</td>
       <td>CONTA</td>
     </tr>
@@ -37,22 +33,10 @@
           <td><?php echo strtoupper($dado["nome_usuario"]) ?></td>
           <td><?php echo $dado["cpf_usuario"] ?></td>
           <td>
-            <a href="saldo.php?id_usuario=<?php echo $dado["id_usuario"] ?>">R$</a>
-          </td>
-          <td>
             <a href="usuarios_com_contas.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Contas</a>
           </td>
           <td>
             <a href="conta.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Criar conta</a>
-          </td>
-          <td>
-            <a href="deposito.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Depósitar</a>
-          </td>
-          <td>
-            <a href="#">Sacar</a>
-          </td>
-          <td>
-            <a href="#">Transferir</a>
           </td>
           <td>
             <a href="editar_usuario.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Editar |</a>
