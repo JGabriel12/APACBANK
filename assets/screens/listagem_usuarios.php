@@ -23,7 +23,6 @@
       <td>CONTAS CRIADAS</td>
       <td>CRIAR CONTA</td>
       <td>USUÁRIO</td>
-      <td>CONTA</td>
     </tr>
 
     <?php while ($dado = $consulta_usuarios_bd->fetch_array()) { ?>
@@ -41,9 +40,6 @@
           <td>
             <a href="editar_usuario.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Editar |</a>
             <a href="excluir_usuario.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Excluir </a>
-          </td>
-          <td>
-            <a href="excluir_conta.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Desativar conta </a>
           </td>
       </form>
     <?php } ?>
