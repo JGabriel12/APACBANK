@@ -39,10 +39,10 @@ $consulta_usuarios_conta_bd = $mysqli->query($consulta_usuarios_conta) or die($m
           <td><?php echo $dado["tipo_conta"] ?></td>
           <td><?php echo $dado["saldo_conta"] ?>R$</td>
           <td>
-            <a href="deposito.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>">Depósitar</a>
+            <a href="deposito.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?>">Depósitar</a>
           </td>
           <td>
-            <a href="#">Sacar</a>
+            <a href="../screens/saque.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?>">Sacar</a>
           </td>
           <td>
             <a href="#">Transferir</a>
