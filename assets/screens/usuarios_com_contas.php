@@ -1,6 +1,6 @@
 <?php include '../php/conecta_db.php';
 $id_usuario = $_GET["id_usuario"];
-$consulta_usuarios_conta = "SELECT * FROM cadastro_usuario as u INNER JOIN conta as c ON (u.id_usuario = c.id_usuario) WHERE $id_usuario = u.id_usuario ";
+$consulta_usuarios_conta = "SELECT * FROM cadastro_usuario as u INNER JOIN conta as c ON (u.id_usuario = c.id_usuario) WHERE $id_usuario = u.id_usuario AND c.status_conta = 1 ";
 $consulta_usuarios_conta_bd = $mysqli->query($consulta_usuarios_conta) or die($mysqli->error);
 ?>
 <!DOCTYPE html>
@@ -28,6 +28,7 @@ $consulta_usuarios_conta_bd = $mysqli->query($consulta_usuarios_conta) or die($m
       <td>SAQUE</td>
       <td>TRANSFERÊNCIA</td>
       <td>Data de criação</td>
+      <td>CONTA</td>
     </tr>
 
     <?php while ($dado = $consulta_usuarios_conta_bd->fetch_array()) { ?>
@@ -48,6 +49,7 @@ $consulta_usuarios_conta_bd = $mysqli->query($consulta_usuarios_conta) or die($m
             <a href="#">Transferir</a>
           </td>
           <td><?php echo $dado["data_de_criacao"] ?></td>
+          <td><a href="../php/excluir_conta.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?>">Desativar conta</a></td>
           <td><a href="listagem_usuarios.php">Voltar</a></td>
       </form>
     <?php } ?>
