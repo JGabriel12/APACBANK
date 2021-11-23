@@ -14,7 +14,7 @@ if ($deposito_atual == null) {
 
   $query = "UPDATE conta SET saldo_conta = '$saldo_conta' WHERE id_usuario = '$id_usuario' AND tipo_conta = '$tipo_conta'";
 
-  $query2 = "INSERT INTO transacao (tipo_transacao, data_transacao, valor_transacao, id_conta_origem) VALUES ('$tipo_conta', '$hoje', '$deposito_atual', '$id_conta')";
+  $query2 = "INSERT INTO transacao (tipo_transacao, data_transacao, valor_transacao, id_conta_origem) VALUES ('Depósito', '$hoje', '$deposito_atual', '$id_conta')";
 
   if (
     $conexao->query($query)
