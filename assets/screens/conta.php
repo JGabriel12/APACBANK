@@ -17,9 +17,7 @@
 
     <form action="../php/criar_conta.php" id="formulario" name="formulario" class="form" method="POST">
 
-      <input type="hidden" name="id_usuario" value="<?php echo $id_usuario = $_GET["id_usuario"];
-
-                                                    ?>">
+      <input type="hidden" name="id_usuario" value="<?php echo $id_usuario = $_GET["id_usuario"]; ?>" />
 
       <div class="data_conta">
         <label for="data_de_criacao">Data atual</label>

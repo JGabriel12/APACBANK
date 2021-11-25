@@ -8,7 +8,7 @@ $tipo_conta = $_GET["tipo_conta"];
 
 if ($saldo_conta >= 1) {
   echo "<script>
-alert('Para desativar sua conta, seu saldo precisa ser = 0');
+alert('Para desativar sua conta, seu saldo precisa ser: 0');
 window.location.href='../screens/listagem_usuarios.php';  
 </script>";
 } else {

@@ -10,17 +10,24 @@ $hoje = date('Y/m/d');
 if ($deposito_atual == null) {
   echo "Você não tem saldo!";
 } else {
-  $saldo_conta -= $deposito_atual;
+  if ($deposito_atual > $saldo_conta) {
+    echo "<script>
+    alert('Você não tem saldo suficiente!');
+    window.location.href='../screens/listagem_usuarios.php';
+    </script>";
+  } else {
 
-  $query = "UPDATE conta SET saldo_conta = '$saldo_conta' WHERE id_usuario = '$id_usuario' AND tipo_conta = '$tipo_conta'";
+    $saldo_conta -= $deposito_atual;
 
-  $query2 = "INSERT INTO transacao (tipo_transacao, data_transacao, valor_transacao, id_conta_origem) VALUES ('Saque', '$hoje', '$deposito_atual', '$id_conta')";
+    $query = "UPDATE conta SET saldo_conta = '$saldo_conta' WHERE id_usuario = '$id_usuario' AND tipo_conta = '$tipo_conta'";
 
+    $query2 = "INSERT INTO transacao (tipo_transacao, data_transacao, valor_transacao, id_conta_origem) VALUES ('Saque', '$hoje', '$deposito_atual', '$id_conta')";
+  }
   if ($conexao->query($query) && $conexao->query($query2) === true) {
     echo "<script>
-  alert('Saque realizado com sucesso!');
-  window.location.href='../screens/listagem_usuarios.php';
-  </script>";
+    alert('Saque realizado com sucesso!');
+    window.location.href='../screens/listagem_usuarios.php';
+    </script>";
   } else {
     echo "Erro " . $query . "<br>" . $conexao->error;
   }
