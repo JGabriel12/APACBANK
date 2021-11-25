@@ -31,9 +31,9 @@ if ($data_de_criacao == null) {
 
   if ($conexao->query($query) === true) {
     echo "<script>
-  alert('Conta cadastrado com sucesso!');
-  window.location.href='../screens/listagem_usuarios.php';
-  </script>";
+    alert('Conta cadastrado com sucesso!');
+    window.location.href='../screens/listagem_usuarios.php';
+    </script>";
   } else {
     echo "Erro " . $query . "<br>" . $conexao->error;
   }
