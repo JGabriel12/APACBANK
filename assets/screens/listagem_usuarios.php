@@ -7,7 +7,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Lista dos usuários</title>
-  <link rel="stylesheet" href="../css/links.css" />
+  <link rel="stylesheet" href="../css/links2.css" />
+  <link rel="stylesheet" href="../css/listagem.css" />
 </head>
 <header>
   <h1>Lista de usuários</h1>

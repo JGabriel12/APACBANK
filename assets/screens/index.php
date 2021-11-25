@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <title>APACBANK</title>
   <link rel="stylesheet" href="../css/mainScreen.css" />
+  <link rel="stylesheet" href="../css/listagemConta.css" />
+
 </head>
 
 <body class="main-bg">

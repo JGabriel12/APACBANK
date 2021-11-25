@@ -10,6 +10,7 @@ $consulta_usuarios_conta_bd = $mysqli->query($consulta_usuarios_conta) or die($m
   <meta charset="UTF-8" />
   <title>Lista dos usuários com contas</title>
   <link rel="stylesheet" href="../css/links.css">
+  <link rel="stylesheet" href="../css/listagemConta.css" />
 </head>
 <header>
   <h1>Contas criadas</h1>

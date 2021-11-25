@@ -12,6 +12,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
   <meta charset="UTF-8" />
   <title>APACBANK</title>
   <link rel="stylesheet" href="../css/mainScreen.css" />
+  <link rel="stylesheet" href="../css/listagemConta.css" />
 </head>
 
 <body class="main-bg">
@@ -30,7 +31,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
         <input class="inputContent" type="number" placeholder="Informe seu CPF" name="cpf_usuario" id="cpf_usuario" maxlength="11" value="<?php echo $row_usuario['cpf_usuario']; ?>" />
       </div>
       <div class="submit">
-        <input class="submitContent" type="submit" value="Excluir" />
+        <input class="rodape" type="submit" value="Excluir" />
       </div>
     </form>
   </section>
