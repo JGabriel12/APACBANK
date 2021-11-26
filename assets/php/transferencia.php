@@ -27,7 +27,7 @@ if (($id_destino == null) || ($saldo_transferencia <= 0) || ($tipo_conta_destino
   window.location.href='../screens/listagem_usuarios.php';  
   </script>";
 } else {
-  if (($saldo_conta > 0) && ($saldo_conta > $saldo_transferencia) && (strcmp($tipo_conta, $tipo_conta_destino) !== 0) && ($id_destino !== null) && ($tipo_conta_destino !== null)) {
+  if (($saldo_conta > 0) && ($saldo_conta > $saldo_transferencia) && ($tipo_conta === $tipo_conta_destino) && ($id_destino !== null) && ($tipo_conta_destino !== null)) {
 
     $query_select = "SELECT saldo_conta FROM conta as c INNER JOIN cadastro_usuario as u ON (c.id_usuario = 
     u.id_usuario) WHERE c.tipo_conta = '$tipo_conta_destino' AND c.id_usuario = $id_destino";
