@@ -10,7 +10,7 @@ Funcionalidades do sistema: Cadastrar user e conta, deletar, listar, atualizar, 
 
 Só podem ser usadas as tecnologias: PHP, HTML, CSS e MySQL.
 
-Não pode usar framework. </h2>
+Não pode usar framework.
 
 Cada usuário poderá, caso queira, abrir mais de um tipo de conta. Os tipos de
 conta disponíveis no banco são: Conta Corrente, Conta Poupança e Conta Jurídica. Cada conta
@@ -33,6 +33,6 @@ Da mesma forma, cada transferência deve ficar armazenada para consultarmos o hi
 futuramente. Gravar a data, os usuários envolvidos e o valor transferido.
 
 Um usuário pode querer encerrar sua conta no banco. Antes disso, ele precisará sacar
-todo o dinheiro do banco e em seguida ser inativado no sistema.
+todo o dinheiro do banco e em seguida ser inativado no sistema.</h2>
 
 Sistema feito somente para estudo :grinning:
