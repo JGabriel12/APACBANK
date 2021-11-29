@@ -6,7 +6,7 @@ Sistema para gerenciar os usuários que desejam abrir uma conta no banco ApacBan
 
 Funcionalidades do sistema: Cadastrar user e conta, deletar, listar, atualizar, depósito, saque e transferência.
 
-<h2>Regras:
+<h3>Regras:
 
 Só podem ser usadas as tecnologias: PHP, HTML, CSS e MySQL.
 
@@ -33,6 +33,6 @@ Da mesma forma, cada transferência deve ficar armazenada para consultarmos o hi
 futuramente. Gravar a data, os usuários envolvidos e o valor transferido.
 
 Um usuário pode querer encerrar sua conta no banco. Antes disso, ele precisará sacar
-todo o dinheiro do banco e em seguida ser inativado no sistema.</h2>
+todo o dinheiro do banco e em seguida ser inativado no sistema.</h3>
 
 Sistema feito somente para estudo :grinning:
