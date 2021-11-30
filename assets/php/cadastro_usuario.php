@@ -15,10 +15,26 @@ if ($nome_usuario == null) {
   echo "Senhas diferentes ou invalidas";
 } else {
 
+  $query2 = "SELECT cpf_usuario FROM cadastro_usuario ";
+
+  $resultado_query = mysqli_query($conexao, $query2);
+  $resultado = mysqli_fetch_array($resultado_query);
+  $user_cpf = $resultado['cpf_usuario'];
+
+  if ($cpf_usuario == $user_cpf) {
+    echo "<script>
+    alert('CPF já existe');
+    window.location.href='../screens/index.php';
+    </script>";
+  }
+
   $senha_usuario_codificada = md5($senha_usuario);
   $confimaSenha_usuario_codificada = md5($confirmaSenha_usuario);
 
   $query = "INSERT INTO cadastro_usuario (nome_usuario, cpf_usuario, senha_usuario, confirmaSenha_usuario) VALUES ('$nome_usuario', '$cpf_usuario', '$senha_usuario_codificada', '$confimaSenha_usuario_codificada')";
+
+
+
 
   if ($conexao->query($query) === true) {
     echo "<script>
