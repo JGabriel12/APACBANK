@@ -8,12 +8,17 @@
   <title>APACBANK</title>
   <link rel="stylesheet" href="../css/mainScreen.css" />
   <link rel="stylesheet" href="../css/listagemConta.css" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 
 <body class="main-bg">
   <section class="sec-form">
     <header>
-      <h1 class="titulo">Cadastro da conta</h1>
+      <div class="mt-5">
+        <h1 class="titulo">Cadastro da conta</h1>
+      </div>
     </header>
 
     <form action="../php/criar_conta.php" id="formulario" name="formulario" class="form" method="POST">
@@ -24,7 +29,7 @@
         <label for="data_de_criacao">Data atual</label>
         <input class="inputContent" type="date" placeholder="Ano/Mês/Dia" name="data_de_criacao" id="data_de_criacao" />
       </div>
-      <div class="tipo_conta">
+      <div class="tipo_conta adjust">
         <select name="tipo_conta" id="tipo_conta">
           <option value="0" selected>Informe o tipo da conta</option>
           <option value="1">Conta corrente</option>
@@ -34,7 +39,7 @@
       </div>
 
       <div class="submit">
-        <input class="submitContent" type="submit" value="Cadastrar" />
+        <input class="submitContent btn btn-primary" type="submit" value="Cadastrar" />
       </div>
     </form>
   </section>

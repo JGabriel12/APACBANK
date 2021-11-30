@@ -19,19 +19,26 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
   <title>Depósito</title>
   <link rel="stylesheet" href="../css/mainScreen.css">
   <link rel="stylesheet" href="../css/listagemConta.css" />
+  <link rel="stylesheet" href="../css/listagem.css" />
 
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <h1>Olá, <?php echo strtoupper($row_usuario['nome_usuario']); ?></h1>
-  <span>Seu saldo nessa conta é: </span> <?php echo $saldo_conta; ?>
+  <h1>Bem-vindo, <?php echo strtoupper($row_usuario['nome_usuario']); ?></h1>
+  <span class="form mt-5 table-itens">Seu saldo nessa conta é: <?php echo $saldo_conta; ?></span>
   <br>
-  <form action="../php/transferencia.php" method="POST">
+  <form class="form" action="../php/transferencia.php" method="POST">
     <input type="number" name="saldo_transferencia" id="saldo_transferencia" placeholder="Saldo para transferência">
     <br>
     <br>
     <input type="number" name="id_destino" id="id_destino" placeholder="Número da conta destino">
+    <br>
+    <br>
     <select name="tipo_conta_destino" id="tipo_conta_destino">
+
       <option value="0" selected>Informe o tipo da conta</option>
       <option value="1">Conta corrente</option>
       <option value="2">Conta Poupança</option>
