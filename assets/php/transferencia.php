@@ -66,7 +66,7 @@ if (($saldo_conta > 0) && ($saldo_conta >= $saldo_transferencia) && ($id_destino
 
     if ($tipo_conta === $tipo_conta_destino) {
       echo "<script>
-        alert('Erro!');
+        alert('Você não pode transferir para o mesmo tipo de conta!');
         window.location.href='../screens/listagem_usuarios.php';  
         </script>";
     }
