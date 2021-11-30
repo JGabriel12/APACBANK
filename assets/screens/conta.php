@@ -25,10 +25,7 @@
 
       <input type="hidden" name="id_usuario" value="<?php echo $id_usuario = $_GET["id_usuario"]; ?>" />
 
-      <div class="data_conta">
-        <label for="data_de_criacao">Data atual</label>
-        <input class="inputContent" type="date" placeholder="Ano/Mês/Dia" name="data_de_criacao" id="data_de_criacao" />
-      </div>
+
       <div class="tipo_conta adjust">
         <select name="tipo_conta" id="tipo_conta">
           <option value="0" selected>Informe o tipo da conta</option>

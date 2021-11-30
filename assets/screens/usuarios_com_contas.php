@@ -21,7 +21,7 @@ $consulta_usuarios_conta_bd = $mysqli->query($consulta_usuarios_conta) or die($m
 </header>
 
 <body class="main-bg">
-  <table class="tabela" border="1px" cellpadding="5px" cellspacing="0">
+  <table class="tabela table-bordered" border="1px" cellpadding="5px" cellspacing="0">
     <tr>
       <td>ID</td>
       <td>NOME</td>
@@ -52,7 +52,7 @@ $consulta_usuarios_conta_bd = $mysqli->query($consulta_usuarios_conta) or die($m
           <td>
             <a class="btn btn-primary" href="../screens/transferencia.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?>">Transferir</a>
           </td>
-          <td><?php echo $dado["data_de_criacao"] ?></td>
+          <td><?php echo date("d/m/Y", strtotime($dado["data_de_criacao"]))  ?></td>
           <td><a class="btn btn-danger" href="../php/excluir_conta.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?> ">Desativar</a></td>
           <td><a class="btn btn-primary" href="listagem_usuarios.php">Voltar</a></td>
       </form>

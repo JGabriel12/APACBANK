@@ -2,7 +2,7 @@
 
 include 'conecta_db.php';
 $id_usuario = filter_input(INPUT_POST, 'id_usuario', FILTER_SANITIZE_NUMBER_INT);
-$data_de_criacao = $_POST["data_de_criacao"];
+$data_de_criacao = date('Y/m/d');
 $tipo_conta = $_POST["tipo_conta"];
 $saldo_conta = 0;
 

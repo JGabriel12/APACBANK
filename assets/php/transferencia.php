@@ -55,12 +55,12 @@ if (($saldo_conta > 0) && ($saldo_conta >= $saldo_transferencia) && ($id_destino
 
   /* ---------------------------------------------------------------------------------------------------------- */
 
-  /* $query_select_nome_destino = "SELECT * FROM conta as c INNER JOIN cadastro_usuario as u ON (c.id_usuario = 
+  $query_select_nome_destino = "SELECT * FROM conta as c INNER JOIN cadastro_usuario as u ON (c.id_usuario = 
     u.id_usuario) WHERE c.id_usuario = $id_destino";
 
   $resultado_query2 = mysqli_query($conexao, $query_select_nome_destino);
   $resultado2 = mysqli_fetch_array($resultado_query2);
-  $user_destino = $resultado2['id_usuario']; */
+  $user_destino = $resultado2['id_usuario'];
 
   /* ---------------------------------------------------------------------------------------------------------- */
 

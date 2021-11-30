@@ -18,7 +18,7 @@
 </header>
 
 <body class="main-bg">
-  <table class="tabela" border="1px" cellpadding="5px" cellspacing="0">
+  <table class="tabela table-bordered" border="1px" cellpadding="5px" cellspacing="0">
     <tr>
       <td class="table-itens">ID</td>
       <td class="table-itens">NOME</td>
@@ -35,7 +35,7 @@
           <td class="table-itens"><?php echo strtoupper($dado["nome_usuario"]) ?></td>
           <td class="table-itens"><?php echo $dado["cpf_usuario"] ?></td>
           <td>
-            <a class="btn btn-primary" href="usuarios_com_contas.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Contas</a>
+            <a class="btn btn-primary margin" href="usuarios_com_contas.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Contas</a>
           </td>
           <td>
             <a class="btn btn-primary" href="conta.php?id_usuario=<?php echo $dado["id_usuario"] ?>">Criar conta</a>
