@@ -30,19 +30,9 @@ if (($id_destino == null) || ($saldo_transferencia <= 0) || ($tipo_conta_destino
   window.location.href='../screens/listagem_usuarios.php';  
   </script>";
 }
-
 if (($saldo_conta > 0) && ($saldo_conta >= $saldo_transferencia) && ($id_destino !== null) && ($tipo_conta_destino !== null)) {
 
-  if ($id_usuario ===  $user_destino) {
-    echo "Teste";
-    die;
-    if ($tipo_conta === $tipo_conta_destino) {
-      echo "<script>
-        alert('Erro!');
-        window.location.href='../screens/listagem_usuarios.php';  
-        </script>";
-    }
-  }
+
   $query_select = "SELECT saldo_conta FROM conta as c INNER JOIN cadastro_usuario as u ON (c.id_usuario = 
     u.id_usuario) WHERE c.tipo_conta = '$tipo_conta_destino' AND c.id_usuario = $id_destino";
 
@@ -53,6 +43,15 @@ if (($saldo_conta > 0) && ($saldo_conta >= $saldo_transferencia) && ($id_destino
   $saldo_conta -= $saldo_transferencia;
   $saldo_conta_destino += $saldo_transferencia;
 
+
+
+  $query = "UPDATE conta SET saldo_conta = '$saldo_conta' WHERE id_usuario = '$id_usuario' AND tipo_conta = '$tipo_conta'";
+
+  $query2 = "UPDATE conta SET saldo_conta = '$saldo_conta_destino' WHERE id_usuario = '$id_destino' AND tipo_conta = '$tipo_conta_destino'";
+
+  $query3 = "INSERT INTO transacao (tipo_transacao, data_transacao, valor_transacao, id_conta_origem, id_conta_destino) VALUES ('Transferência', '$hoje', '$saldo_transferencia', '$id_conta', '$id_destino')";
+
+
   /* ---------------------------------------------------------------------------------------------------------- */
 
   $query_select_nome_destino = "SELECT * FROM conta as c INNER JOIN cadastro_usuario as u ON (c.id_usuario = 
@@ -62,13 +61,18 @@ if (($saldo_conta > 0) && ($saldo_conta >= $saldo_transferencia) && ($id_destino
   $resultado2 = mysqli_fetch_array($resultado_query2);
   $user_destino = $resultado2['id_usuario'];
 
+
+  if ($id_usuario ===  $user_destino) {
+
+    if ($tipo_conta === $tipo_conta_destino) {
+      echo "<script>
+        alert('Erro!');
+        window.location.href='../screens/listagem_usuarios.php';  
+        </script>";
+    }
+  }
+
   /* ---------------------------------------------------------------------------------------------------------- */
-
-  $query = "UPDATE conta SET saldo_conta = '$saldo_conta' WHERE id_usuario = '$id_usuario' AND tipo_conta = '$tipo_conta'";
-
-  $query2 = "UPDATE conta SET saldo_conta = '$saldo_conta_destino' WHERE id_usuario = '$id_destino' AND tipo_conta = '$tipo_conta_destino'";
-
-  $query3 = "INSERT INTO transacao (tipo_transacao, data_transacao, valor_transacao, id_conta_origem, id_conta_destino) VALUES ('Transferência', '$hoje', '$saldo_transferencia', '$id_conta', '$id_destino')";
 
 
   if (
