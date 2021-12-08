@@ -22,39 +22,43 @@ $consulta_usuarios_conta_bd = $mysqli->query($consulta_usuarios_conta) or die($m
 
 <body class="main-bg">
   <table class="tabela table-bordered" border="1px" cellpadding="5px" cellspacing="0">
-    <tr>
-      <td>ID</td>
-      <td>NOME</td>
-      <td>CPF</td>
-      <td>Contas</td>
-      <td>Saldo</td>
-      <td>DEPÓSITO</td>
-      <td>SAQUE</td>
-      <td>TRANSFERÊNCIA</td>
-      <td>Data de criação</td>
-      <td>CONTA</td>
-    </tr>
-
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>NOME</td>
+        <td>CPF</td>
+        <td>Contas</td>
+        <td>Saldo</td>
+        <td>DEPÓSITO</td>
+        <td>SAQUE</td>
+        <td>TRANSFERÊNCIA</td>
+        <td>Data de criação</td>
+        <td>CONTA</td>
+      </tr>
+    </thead>
     <?php while ($dado = $consulta_usuarios_conta_bd->fetch_array()) { ?>
       <form action="../screens/deposito.php" method="POST">
-        <tr>
-          <td><input type="hidden" name="id_usuario" value="<?php echo $dado["id_usuario"] ?>"><?php echo $dado["id_usuario"] ?></td>
-          <td><?php echo strtoupper($dado["nome_usuario"]) ?></td>
-          <td><?php echo $dado["cpf_usuario"] ?></td>
-          <td><?php echo $dado["tipo_conta"] ?></td>
-          <td><?php echo $dado["saldo_conta"] ?>R$</td>
-          <td>
-            <a class="btn btn-primary" href="deposito.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?>">Depósitar</a>
-          </td>
-          <td>
-            <a class="btn btn-primary" href="../screens/saque.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?>">Sacar</a>
-          </td>
-          <td>
-            <a class="btn btn-primary" href="../screens/transferencia.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?>">Transferir</a>
-          </td>
-          <td><?php echo date("d/m/Y", strtotime($dado["data_de_criacao"]))  ?></td>
-          <td><a class="btn btn-danger" href="../php/excluir_conta.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?> ">Desativar</a></td>
-          <td><a class="btn btn-primary" href="listagem_usuarios.php">Voltar</a></td>
+        <tbody>
+          <tr>
+            <td><input type="hidden" name="id_usuario" value="<?php echo $dado["id_usuario"] ?>"><?php echo $dado["id_usuario"] ?></td>
+            <td><?php echo strtoupper($dado["nome_usuario"]) ?></td>
+            <td><?php echo $dado["cpf_usuario"] ?></td>
+            <td><?php echo $dado["tipo_conta"] ?></td>
+            <td><?php echo $dado["saldo_conta"] ?>R$</td>
+            <td>
+              <a class="btn btn-primary" href="deposito.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?>">Depósitar</a>
+            </td>
+            <td>
+              <a class="btn btn-primary" href="../screens/saque.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?>">Sacar</a>
+            </td>
+            <td>
+              <a class="btn btn-primary" href="../screens/transferencia.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?>">Transferir</a>
+            </td>
+            <td><?php echo date("d/m/Y", strtotime($dado["data_de_criacao"]))  ?></td>
+            <td><a class="btn btn-danger" href="../php/excluir_conta.php?id_usuario=<?php echo $dado["id_usuario"] ?>&tipo_conta=<?php echo $dado["tipo_conta"] ?>&saldo_conta=<?php echo $dado["saldo_conta"] ?>&id_conta=<?php echo $dado["id_conta"] ?> ">Desativar</a></td>
+            <td><a class="btn btn-primary" href="listagem_usuarios.php">Voltar</a></td>
+          </tr>
+        </tbody>
       </form>
     <?php } ?>
 

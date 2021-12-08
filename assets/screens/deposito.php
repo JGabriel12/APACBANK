@@ -28,7 +28,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 </head>
 
 <body>
-  <h1>Bem-vindo, <?php echo strtoupper($row_usuario['nome_usuario']); ?></h1>
+  <h1><?php echo strtoupper($row_usuario['nome_usuario']); ?></h1>
   <span class="form mt-5 table-itens">Seu saldo nessa conta é: <?php echo $saldo_conta; ?></span>
   <br>
   <form class="form" action="../php/deposito.php" method="POST">
