@@ -75,7 +75,7 @@ table {
 }
 
 /* Small Sizes */
-@media screen and (max-width: 921px) {
+@media screen and (max-width: 820px) {
   /* Responsive Table */
   .table-responsive {
     display: block;
@@ -85,7 +85,7 @@ table {
   }
 
   a {
-    width: 100px;
+    width: 150px;
   }
 
   .thead {
@@ -108,7 +108,7 @@ table {
 
   .table td {
     border-right: #999999 solid 1px;
-    font-size: 27px;
+    font-size: 20px;
     padding: 30px;
     line-height: 20px;
     text-align: center;
