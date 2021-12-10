@@ -8,11 +8,20 @@ $senha_usuario = $_POST["senha_usuario"];
 $confirmaSenha_usuario = $_POST["confirmaSenha_usuario"];
 
 if ($nome_usuario == null) {
-  echo "Nome invalido!";
-} else if ($cpf_usuario == null) {
-  echo "CPF invalido!";
+  echo "<script>
+  alert('Nome invalido');
+  window.location.href='../screens/index.php';
+  </script>";
+} else if (($cpf_usuario == null) || ($cpf_usuario >= 11)) {
+  echo "<script>
+  alert('CPF invalido');
+  window.location.href='../screens/index.php';
+  </script>";
 } else if (($senha_usuario != $confirmaSenha_usuario) || ($senha_usuario == null) || ($confirmaSenha_usuario == null)) {
-  echo "Senhas diferentes ou invalidas";
+  echo "<script>
+  alert('Senha invalida ou diferentes');
+  window.location.href='../screens/index.php';
+  </script>";
 } else {
 
   $query2 = "SELECT cpf_usuario FROM cadastro_usuario ";
