@@ -12,7 +12,7 @@ if ($nome_usuario == null) {
   alert('Nome invalido');
   window.location.href='../screens/index.php';
   </script>";
-} else if (($cpf_usuario == null) || ($cpf_usuario >= 11)) {
+} else if (($cpf_usuario == null) || (strlen($cpf_usuario) != 11)) {
   echo "<script>
   alert('CPF invalido');
   window.location.href='../screens/index.php';

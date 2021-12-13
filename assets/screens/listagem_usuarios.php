@@ -51,7 +51,6 @@
         </tbody>
       </form>
     <?php } ?>
-
   </table>
 </body>
 
